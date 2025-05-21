@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-Windows</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Drive.v3" Version="1.57.0.2684" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CloudServiceProvider\CloudServiceProvider.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CommonUtilities">
+      <HintPath>D:\Libraries\.NET Core\CommonUtilities V2\v1.1.0\dlls\64BitRel\CommonUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomDialogs">
+      <HintPath>D:\Libraries\.NET Core\CustomDialogs\v1.4.9\dlls\64BitRel\CustomDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleBinaryTag">
+      <HintPath>D:\Libraries\.NET Core\SimpleBinaryTag\v1.1.0\dlls\64BitRel\SimpleBinaryTag.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Control\CredentialsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Control\IdResourceEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Control\ReauthorizationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
